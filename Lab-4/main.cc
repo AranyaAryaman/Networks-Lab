@@ -152,19 +152,19 @@ int main(int argc, char *argv[])
 		Ipv4GlobalRoutingHelper::PopulateRoutingTables();
 
 		//printing ips
-		std::cout << "Assigned IPs to Receivers:" << std::endl;
-		std::cout << i3i4.GetAddress(0) << std::endl;
-		std::cout << i3i4.GetAddress(1) << std::endl;
-		std::cout << i3i5.GetAddress(0) << std::endl;
-		std::cout << i3i5.GetAddress(1) << std::endl;
-		std::cout << "Assigned IPs to Senders:" << std::endl;
-		std::cout << i0i2.GetAddress(0) << std::endl;
-		std::cout << i0i2.GetAddress(1) << std::endl;
-		std::cout << i1i2.GetAddress(0) << std::endl;
-		std::cout << i1i2.GetAddress(1) << std::endl;
-		std::cout << "Assigned IPs to Router:" << std::endl;
-		std::cout << i2i3.GetAddress(0) << std::endl;
-		std::cout << i2i3.GetAddress(1) << std::endl;
+		// std::cout << "Assigned IPs to Receivers:" << std::endl;
+		// std::cout << i3i4.GetAddress(0) << std::endl;
+		// std::cout << i3i4.GetAddress(1) << std::endl;
+		// std::cout << i3i5.GetAddress(0) << std::endl;
+		// std::cout << i3i5.GetAddress(1) << std::endl;
+		// std::cout << "Assigned IPs to Senders:" << std::endl;
+		// std::cout << i0i2.GetAddress(0) << std::endl;
+		// std::cout << i0i2.GetAddress(1) << std::endl;
+		// std::cout << i1i2.GetAddress(0) << std::endl;
+		// std::cout << i1i2.GetAddress(1) << std::endl;
+		// std::cout << "Assigned IPs to Router:" << std::endl;
+		// std::cout << i2i3.GetAddress(0) << std::endl;
+		// std::cout << i2i3.GetAddress(1) << std::endl;
 
 		//printing routing tables for the all the nodes in the container
 		Ipv4GlobalRoutingHelper g;
@@ -281,9 +281,9 @@ int main(int argc, char *argv[])
 		for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin(); i != stats.end(); ++i)
 		{
 			Ipv4FlowClassifier::FiveTuple t = classifier->FindFlow(i->first);
-			std::cout << "asdfasdf\n";
-			std::cout << t.sourceAddress << "\n";
-			std::cout << t.destinationAddress << "\n";
+			//std::cout << "asdfasdf\n";
+			std::cout << "Source Address: " << t.sourceAddress << "\n";
+			std::cout << "Destination Address: " << t.destinationAddress << "\n\n";
 
 			if (t.sourceAddress == "10.1.0.1")
 			{
@@ -300,12 +300,12 @@ int main(int argc, char *argv[])
 				std::cout << "Rx Bytes:" << i->second.rxBytes << "\n";
 				std::cout << "Net Packet Lost: " << i->second.lostPackets << "\n";
 				std::cout << "Lost due to droppackets: " << i->second.packetsDropped.size() << "\n";
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/0/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/1/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/2/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/3/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/4/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/5/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/0/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/1/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/2/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/3/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/4/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/5/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
 				std::cout << "Delay: " << i->second.delaySum.GetSeconds() << std::endl;
 				std::cout << "Mean Delay: " << i->second.delaySum.GetSeconds() / (i->second.rxPackets) << std::endl;
 				std::cout << "Offered Load: " << i->second.txBytes * 8.0 / (i->second.timeLastTxPacket.GetSeconds() - i->second.timeFirstTxPacket.GetSeconds()) / 1000000 << " Mbps" << std::endl;
@@ -328,12 +328,12 @@ int main(int argc, char *argv[])
 				std::cout << "Rx Bytes:" << i->second.rxBytes << "\n";
 				std::cout << "Net Packet Lost: " << i->second.lostPackets << "\n";
 				std::cout << "Lost due to droppackets: " << i->second.packetsDropped.size() << "\n";
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/0/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/1/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/2/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/3/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/4/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
-				std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/5/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/0/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/1/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/2/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/3/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/4/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
+				// std::cout << "Max throughput: " << mapMaxThroughput["/NodeList/5/$ns3::Ipv4L3Protocol/Rx"] << std::endl;
 				std::cout << "Delay: " << i->second.delaySum.GetSeconds() << std::endl;
 				std::cout << "Mean Delay: " << i->second.delaySum.GetSeconds() / (i->second.rxPackets) << std::endl;
 				std::cout << "Offered Load: " << i->second.txBytes * 8.0 / (i->second.timeLastTxPacket.GetSeconds() - i->second.timeFirstTxPacket.GetSeconds()) / 1000000 << " Mbps" << std::endl;
