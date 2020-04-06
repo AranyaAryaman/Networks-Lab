@@ -1,0 +1,23 @@
+1) The assignment has been submitted by Group-30 which contains five files:
+	1) Part-1
+	2) Part-2
+	3) main.cc
+	4) Readme
+	5) Assignment
+
+2) Part-1 & Part-2 are two folders present with the assignment which contains the required graphs and data.
+
+To run on your own machine:
+
+1) Run the command "./waf --run scratch/main" after copying the "main.cc" file present in this folder into your "ns-3-version/scratch" folder and change the name of the protocol 
+which is currently set as "TCP HighSpeed". 
+
+2) two ".plt" files will be formed using the traces from the Flow Monitor of ns-3. Use the command "gnuplot file-name" to see the corresponding ".png" image of the data obtained.
+
+
+Group-30
+
+Aranya Aryaman
+Avneet Singh Channa
+Naveen Kumar Gupta
+
